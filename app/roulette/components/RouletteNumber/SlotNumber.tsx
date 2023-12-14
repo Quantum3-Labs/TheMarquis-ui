@@ -46,6 +46,7 @@ const SlotNumber: React.FC<SlotNumberProps> = ({
 
     let updatedCoins = [...slots[index]?.coins];
 
+    console.log(updatedCoins)
     if (eraseMode) {
       updatedCoins = [];
     } else {
