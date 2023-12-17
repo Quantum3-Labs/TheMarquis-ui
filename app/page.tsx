@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Row from "./components/Row/Row";
 import DegradeButton from "./components/DegradeButton/DegradeButton";
@@ -8,8 +9,13 @@ import ServiceContainer from "./components/ServiceContainer/ServiceContainer";
 import Footer from "./components/Footer/Footer";
 import Carousel from "./components/Carousel/Carousel";
 import { items } from "./data";
+import WalletConnect from "./components/WalletConnect/WalletConnect";
 
 export default function Home() {
+  function handleConnectWallet(): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <>
       <main className="nav-position ">
@@ -25,7 +31,7 @@ export default function Home() {
                     A Revolutionary On-Chain Gambling System Powered by Starknet
                   </p>
                   <div className=" flex gap-4 py-10">
-                    <DegradeButton size="large">CONNECT WALLET</DegradeButton>
+                  <WalletConnect onClick={handleConnectWallet}> </WalletConnect>
                     <PillButton documentUrl="">READ DOCS</PillButton>
                   </div>
                   <div>
