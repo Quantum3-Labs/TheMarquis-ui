@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import DegradeButton from "../DegradeButton/DegradeButton";
 import { connect, disconnect } from "get-starknet";
 
-interface WalletConnectProps {
+interface ConnectWalletProps {
   children: React.ReactNode;
   onClick: () => void;
 }
 
 
-const WalletConnect: React.FC<WalletConnectProps> = ({ children }: WalletConnectProps) => {
+const ConnectWallet: React.FC<ConnectWalletProps> = ({ children }: ConnectWalletProps) => {
   const [isConnected, setIsConnected] = useState(false);
   const [address, setAddress] = useState('');
 
@@ -53,4 +53,4 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ children }: WalletConnect
   );
 };
 
-export default WalletConnect;
+export default ConnectWallet;

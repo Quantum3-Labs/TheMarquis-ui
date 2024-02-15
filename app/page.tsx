@@ -9,7 +9,8 @@ import ServiceContainer from "./components/ServiceContainer/ServiceContainer";
 import Footer from "./components/Footer/Footer";
 import Carousel from "./components/Carousel/Carousel";
 import { items } from "./data";
-import WalletConnect from "./components/WalletConnect/WalletConnect";
+import ConnectWallet from "./components/ConnectWallet/ConnectWallet";
+import { StarknetProvider } from './components/Provider/Provider'
 
 export default function Home() {
   function handleConnectWallet(): void {
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <>
+    <StarknetProvider>
       <main className="nav-position ">
         <Row>
           <section className="flex justify-center">
@@ -31,7 +33,7 @@ export default function Home() {
                     A Revolutionary On-Chain Gambling System Powered by Starknet
                   </p>
                   <div className=" flex gap-4 py-10">
-                  <WalletConnect onClick={handleConnectWallet}> </WalletConnect>
+                  <ConnectWallet onClick={handleConnectWallet}> </ConnectWallet>
                     <PillButton documentUrl="">READ DOCS</PillButton>
                   </div>
                   <div>
@@ -170,6 +172,7 @@ export default function Home() {
           </section>
         </Row>
       </main>
+      </StarknetProvider>
     </>
   );
 }
